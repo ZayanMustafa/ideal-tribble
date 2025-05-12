@@ -27,13 +27,13 @@ const corsOptions = {
 
 
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(express.json());
 
 
 
 // MongoDB connection
-mongoose.connect("mongodb+srv://muzammil:muzammil@cluster0.5ozicp4.mongodb.net/fussion?retryWrites=true&w=majority&appName=Cluster0" )
+await mongoose.connect(process.env.MONGODB_URI)
   .then(
     
     () => console.log("MongoDB connected successfully")
@@ -49,6 +49,9 @@ mongoose.connect("mongodb+srv://muzammil:muzammil@cluster0.5ozicp4.mongodb.net/f
 
 // Routes
 app.use('/orders', vinOrderRouter);
+
+
+
 
 
 

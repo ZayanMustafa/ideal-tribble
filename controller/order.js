@@ -78,3 +78,44 @@ export const getVinOrderCollection = async (req, res) => {
         });
     }
 }
+
+
+
+// For update Payment Method 
+export const UpdateVinOrder = async (req , res)=>{
+
+
+
+        const { orderId } = req.params
+        try {
+
+            const updatePayment = await VinOrderReport.findByIdAndUpdate( orderId , {
+                    $set: {
+                        paymentStatus : 'confirmed'
+                    }
+                
+            },
+                {
+                    new : true  
+                }
+        )
+        return res.json({
+            success: true,
+            message: "Order Updated Successfully",
+            orders: updatePayment 
+        });
+
+
+        } catch (error) {
+            
+              return res.status(500).json({
+            success: false,
+            message: error.message
+        });
+
+        }
+
+
+
+
+}
