@@ -1,35 +1,5 @@
 
 
-// File : controller/order.js
-// import VinOrderReport from "../models/order.js";
-// export const vinOrderCollection = async (req , res) => {
-//      const { name , email , phoneNumber , vinNumber , vehicleModel, year , paymentStatus } = req.body
-
-//     const orderSave = VinOrderReport({
-//         name , email , phoneNumber , vinNumber , vehicleModel , year , paymentStatus
-//     })
-
-//     await orderSave.save()
-//     return res.json({
-//         success : true,
-//         message : "Order Confirmed",
-//         orderSave
-//     })
-// }
-
-
-// export const getVinOrderCollection = async ( req , res )=>{
-//     const getOrder = await VinOrderReport.find()
-//     return res.json({
-
-//         success : true,
-//         message : "Get All Orders Successfully",
-//         getOrder
-//     })
-// }
-
-
-
 // File: controller/order.js
 import VinOrderReport from "../models/order.js";
 
@@ -63,6 +33,10 @@ export const vinOrderCollection = async (req, res) => {
     }
 }
 
+
+
+
+// For getting orders
 export const getVinOrderCollection = async (req, res) => {
     try {
         const getOrder = await VinOrderReport.find();
