@@ -15,7 +15,6 @@ const corsOptions = {
     "http://localhost:3000",
     "https://fussionreport.vercel.app",
     "https://potential-meme-psi.vercel.app",
-    "https://potential-meme-chi.vercel.app",
   ],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"],
